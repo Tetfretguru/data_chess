@@ -27,11 +27,8 @@ class Rey(Pieza):
     def graficar(self, x_vals, y_vals):
         output_file('Movimientos de pieza.html')
         fig = figure()
-
-
-
-
         fig.circle(x_vals, y_vals)
+        
         show(fig)
 
 if __name__ == '__main__':
