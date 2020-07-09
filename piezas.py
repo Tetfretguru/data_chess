@@ -17,12 +17,22 @@ class Rey(Pieza):
         return self.nombre + ' ' + self.equipo
     
     def mover(self):
-        """ El rey se mueve en todas (8) direcciones de a un paso """
-        pass
+        return   random.choice([(0, 1), (0, -1), (1, 0), (-1, 0), (1, 1), (-1, -1), (-1, 1), (1, -1)])
+       
 
     def comer(self):
         """ Come en todas las direcciones """
         pass
+    
+    def graficar(self, x_vals, y_vals):
+        output_file('Movimientos de pieza.html')
+        fig = figure()
+
+
+
+
+        fig.circle(x_vals, y_vals)
+        show(fig)
 
 if __name__ == '__main__':
     nombre = 'King'
