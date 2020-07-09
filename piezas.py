@@ -1,4 +1,4 @@
-#from bokeh.plotting import show, output_file, figure
+from bokeh.plotting import show, output_file, figure
 import random
 
 class Pieza:
@@ -7,6 +7,12 @@ class Pieza:
         self.nombre = nombre 
         self.equipo = equipo
     
+    def graficar(self, x_vals, y_vals):
+        output_file('Movimientos de pieza.html')
+        fig = figure()
+        fig.circle(x_vals, y_vals)
+        
+        show(fig)    
     
     
 
@@ -25,12 +31,7 @@ class Rey(Pieza):
         """ Come en todas las direcciones """
         pass
     
-    def graficar(self, x_vals, y_vals):
-        output_file('Movimientos de pieza.html')
-        fig = figure()
-        fig.circle(x_vals, y_vals)
-        
-        show(fig)
+    
 
 class Reina(Pieza):
     def __init__(self, nombre, equipo):
