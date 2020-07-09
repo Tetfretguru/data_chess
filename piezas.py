@@ -8,6 +8,7 @@ class Pieza:
         self.equipo = equipo
     
     
+    
 
 class Rey(Pieza):
     def __init__(self, nombre, equipo):
@@ -23,7 +24,13 @@ class Rey(Pieza):
     def comer(self):
         """ Come en todas las direcciones """
         pass
-<<<<<<< HEAD
+    
+      def graficar(self, x_vals, y_vals):
+        output_file('Movimientos de pieza.html')
+        fig = figure()
+        fig.circle(x_vals, y_vals)
+        
+        show(fig)
 
 class Reina(Pieza):
     def __init__(self, nombre, equipo):
@@ -92,17 +99,10 @@ if __name__ == '__main__':
   
 
     
-=======
     
-    def graficar(self, x_vals, y_vals):
-        output_file('Movimientos de pieza.html')
-        fig = figure()
-        fig.circle(x_vals, y_vals)
-        
-        show(fig)
+  
 
 
->>>>>>> grafico
 
     
 
