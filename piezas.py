@@ -49,6 +49,22 @@ class Reina(Pieza):
         pass
 
 
+class Caballo(Pieza):
+    def __init__(self, nombre, equipo):
+        super().__init__(nombre, equipo)
+    
+    def __repr__(self):
+        return self.nombre + ' ' + self.equipo
+    
+    def mover(self):
+        
+        pass
+
+    def comer(self):
+        """ Come en todas las direcciones """
+        pass
+
+
 
 if __name__ == '__main__':
     
