@@ -1,3 +1,6 @@
+from bokeh.plotting import show, output_file, figure
+import random
+
 class Pieza:
     def __init__(self, nombre, equipo):
         """ Constructor de piezas. Superclase """
