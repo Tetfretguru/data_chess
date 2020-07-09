@@ -31,12 +31,7 @@ class Rey(Pieza):
         
         show(fig)
 
-if __name__ == '__main__':
-    nombre = 'King'
-    equipo = 'N'
-    pieza = Rey(nombre, equipo)
 
-    print(pieza)
 
     
 
