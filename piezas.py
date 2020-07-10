@@ -33,7 +33,7 @@ class Rey(Pieza):
     
     
 
-class Reina(Pieza):
+class Alfil(Pieza):
     def __init__(self, nombre, equipo):
         super().__init__(nombre, equipo)
     
@@ -41,16 +41,11 @@ class Reina(Pieza):
         return self.nombre + ' ' + self.equipo
     
     def mover():
-        # Se mueve a lo largo de todo el tablero
-        y = list(range(1, 19))
-        x = list(range(1, 19))
-
-        path = []
-        for i in x:
-            img = random.choice(y)
-            path.append([i,img])
-
-        return  path
+        # Se mueve en diagonal
+        y = list(range(1, 9))
+        x = list(range(1, 9))
+        
+        return  (len(y)**2 + len(x)**2)**0.5
 
     def comer(self):
         """ Come en todas las direcciones """
@@ -77,7 +72,7 @@ class Caballo(Pieza):
 if __name__ == '__main__':
     
     reyes = []
-    reinas = []
+    alfiles = []
  
 
     #Cantidad de reyes posibles 
@@ -100,51 +95,21 @@ if __name__ == '__main__':
     print('---' * 6)
 
     q = 0
-    while q <= len(reinas):
-        nombre = 'Queen'
+    while q <= len(alfiles):
+        nombre = 'Alfie'
         equipo = 'W'
-        pieza = Reina(nombre, equipo)
-        reinas.append(pieza)
+        pieza = Alfil(nombre, equipo)
+        alfiles.append(pieza)
         q += 1
         if q == 1:
-            nombre = 'Queen'
+            nombre = 'Alfie'
             equipo = 'B'
-            pieza = Reina(nombre, equipo)
-            reinas.append(pieza)
+            pieza = Alfil(nombre, equipo)
+            alfiles.append(pieza)
             break
     
-    for reina in reinas:
-        print(f'Pieza: {reina}')
+    for alfil in alfiles:
+        print(f'Pieza: {alfil}')
     
-    mueve = Reina.mover()
-    print(mueve)
-
-    dots = mueve
-    grafica = Pieza.graficar(dots)
-
-
-
-
-
-
-
-
-
-
-   
-   
-  
-
-    
-    
-  
-
-
-
-    
-
-
-
-
-
-    
+    mueve = Alfil.mover()
+    print(f'El coeficiente de movimiento maximo de un alfil es {round(mueve, 1)}')
