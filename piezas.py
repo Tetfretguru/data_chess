@@ -7,10 +7,10 @@ class Pieza:
         self.nombre = nombre 
         self.equipo = equipo
     
-    def graficar(self, x_vals, y_vals):
+    def graficar(self, dots):
         output_file('Movimientos de pieza.html')
         fig = figure()
-        fig.circle(x_vals, y_vals)
+        fig.circle(dots)
         
         show(fig)    
     
@@ -40,9 +40,17 @@ class Reina(Pieza):
     def __repr__(self):
         return self.nombre + ' ' + self.equipo
     
-    def mover(self):
-        """ El rey se mueve en todas (8) direcciones de a un paso """
-        pass
+    def mover():
+        # Se mueve a lo largo de todo el tablero
+        y = list(range(1, 19))
+        x = list(range(1, 19))
+
+        path = []
+        for i in x:
+            img = random.choice(y)
+            path.append([i,img])
+
+        return  path
 
     def comer(self):
         """ Come en todas las direcciones """
@@ -108,9 +116,21 @@ if __name__ == '__main__':
     for reina in reinas:
         print(f'Pieza: {reina}')
     
+    mueve = Reina.mover()
+    print(mueve)
+
+    dots = mueve
+    grafica = Pieza.graficar(dots)
 
 
-    
+
+
+
+
+
+
+
+
    
    
   
