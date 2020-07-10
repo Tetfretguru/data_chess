@@ -112,4 +112,4 @@ if __name__ == '__main__':
         print(f'Pieza: {alfil}')
     
     mueve = Alfil.mover()
-    print(f'El coeficiente de movimiento maximo de un alfil es {round(mueve, 1)}')
+    print(f'El coeficiente de movimiento maximo de un alfil es {round(mueve, 2)}')
