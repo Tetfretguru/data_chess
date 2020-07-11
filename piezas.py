@@ -1,5 +1,6 @@
 from bokeh.plotting import show, output_file, figure
 import random
+import math
 
 class Pieza:
     def __init__(self, nombre, equipo):
